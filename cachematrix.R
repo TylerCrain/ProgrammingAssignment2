@@ -1,6 +1,6 @@
-## This function will create an inverse matrix. In this function you can
-## set your input, and get the inverse once it has been cached in the next 
-## function
+## This function will create a matrix and clear the cache, setting it to null.
+## In this function you can set your input, and get the inverse once it has been
+## cached in the next function. 
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -18,9 +18,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function will Cache the inverse matrix so it can be called
+## This function will compute and Cache the matrix so it can be called
 ## later, and will not have to be recalculated after the inital call
-## and calculation. These results can also be called in the previous function
+## and calculation. If the matrix has already been solved, it will retrieve it
+## from the cache
 
 cacheSolve <- function(x, ...) {
     m <- x$getinverse()
